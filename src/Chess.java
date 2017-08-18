@@ -8,6 +8,11 @@ public class Chess {
         this.color = color;
     }
 
+    public Chess(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     @Override
     public boolean equals(Chess chess) {
         return chess.getX() == x && chess.getY() == y && chess.getColor() == color;
