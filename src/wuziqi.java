@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class wuziqi {
-    static final int BLACK = 1;
-    static final int WHITE = -1;
-    static final int DRAW = 0;
-    static final int MAX = 15;
-   //todo
+    public static final int BLACK = 1;
+    public static final int WHITE = -1;
+    public static final int DRAW = 0;
+    public static final int MAX = 15;
+
     public static void main(String[] aargs) {
         ChessArrayList list = new ChessArrayList();
         Scanner input = new Scanner(System.in);

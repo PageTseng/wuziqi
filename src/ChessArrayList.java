@@ -38,6 +38,7 @@ public class ChessArrayList {
         return false;
     }
 
+    //check win from four direction(A, B, C, D)
     public boolean check(Chess chess) {
         return checkA(chess) || checkB(chess) || checkC(chess) || checkD(chess);
     }
