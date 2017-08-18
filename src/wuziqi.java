@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class wuziqi {
-    //todo
+    static final int BLACK = 1;
+    static final int WHITE = -1;
+    static final int DRAW = 0;
+    static final int MAX = 15;
+   //todo
     public static void main(String[] aargs) {
-        static final int BLACK = 1;
-        static final int WHITE = -1;
-        static final int DRAW = 0;
-        static final int MAX = 15;
         ChessArrayList list = new ChessArrayList();
         Scanner input = new Scanner(System.in);
         int x, y;
@@ -18,7 +18,7 @@ public class wuziqi {
             x = input.nextInt();
             y = input.nextInt();
 
-            while (list.hasChess(new Point(x, y)) || (x <= 0 || x > MAX) || (y <= 0 || y > MAX)) {
+            while (list.hasChess(new Chess(x, y)) || (x <= 0 || x > MAX) || (y <= 0 || y > MAX)) {
                 System.out.print("There is a chess piece or the position over the chess board(15*15)! Please enter a new position\n" + "black: ");
                 x = input.nextInt();
                 y = input.nextInt();
@@ -26,7 +26,7 @@ public class wuziqi {
 
             blackChess = new Chess(x, y, 'b');
             list.add(blackChess);
-            if (check(blackChess)) {
+            if (list.check(blackChess)) {
                 winner = BLACK;
                 break;
             }
@@ -35,7 +35,7 @@ public class wuziqi {
             x = input.nextInt();
             y = input.nextInt();
 
-            while (list.hasChess(new Point(x, y)) || (x <= 0 || x > MAX) || (y <= 0 || y > MAX)) {
+            while (list.hasChess(new Chess(x, y)) || (x <= 0 || x > MAX) || (y <= 0 || y > MAX)) {
                 System.out.print("There is a chess piece or the position over the chess board(15*15)! Please enter a new position\n" + "black: ");
                 x = input.nextInt();
                 y = input.nextInt();
@@ -43,7 +43,7 @@ public class wuziqi {
 
             whiteChess = new Chess(x, y, 'w');
             list.add(whiteChess);
-            if (check(whiteChess)) {
+            if (list.check(whiteChess)) {
                 winner = WHITE;
                 break;
             }

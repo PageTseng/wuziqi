@@ -13,7 +13,6 @@ public class Chess {
         this.y = y;
     }
 
-    @Override
     public boolean equals(Chess chess) {
         return chess.getX() == x && chess.getY() == y && chess.getColor() == color;
     }
