@@ -1,38 +1,42 @@
-public class PointArrayList {
+public class ChessArrayList {
     public static final int CAPACITY = 225;
     public static final int MAX = 15;
 
     private int size = 0;
-    private Point[] list = new Point[CAPACITY];
+    private Chess[] list = new Chess[CAPACITY];
 
     //todo
-    public void add(Point point) {
+    public void add(Chess chess) {
     }
 
-    //todo
+    //clean the chess board
     public void clean() {
+        for (int i = 0; i < CAPACITY; i++)
+            list[i] = null;
+
+        size = 0;
     }
 
     //todo
-    public boolean contains(Point point) {
+    public boolean contains(Chess chess) {
     }
 
     //todo
-    public boolean check(Point point) {
+    public boolean check(Chess chess) {
     }
 
-    public class Point {
+    public class Chess {
         private int x, y;
         private char color;
 
-        public Point(int x, int y, char color) {
+        public Chess(int x, int y, char color) {
             this.x = x;
             this.y = y;
             this.color = color;
         }
 
-        //todo
-        public boolean equals(Point point) {
+        public boolean equals(Chess chess) {
+            return chess.getX() == x && chess.getY() == y && chess.getColor() == color;
         }
 
         public int getX() {
