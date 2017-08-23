@@ -10,6 +10,14 @@ public class ChessArrayList {
         list[size++] = chess;
     }
 
+    public Chess get(int index) {
+        return list[index];
+    }
+
+    public int getSize() {
+        return size;
+    }
+
     //clean the chess board
     public void clean() {
         for (int i = 0; i < CAPACITY; i++)

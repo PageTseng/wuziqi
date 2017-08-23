@@ -11,6 +11,7 @@ public class wuziqi {
         Scanner input = new Scanner(System.in);
         int x, y;
         int winner = DRAW;
+        (new Paint(list)).onDraw();
 
         while (true) {
             Chess blackChess, whiteChess;
@@ -26,6 +27,7 @@ public class wuziqi {
 
             blackChess = new Chess(x, y, 'b');
             list.add(blackChess);
+            (new Paint(list)).onDraw();
             if (list.check(blackChess)) {
                 winner = BLACK;
                 break;
@@ -43,6 +45,7 @@ public class wuziqi {
 
             whiteChess = new Chess(x, y, 'w');
             list.add(whiteChess);
+            (new Paint(list)).onDraw();
             if (list.check(whiteChess)) {
                 winner = WHITE;
                 break;
