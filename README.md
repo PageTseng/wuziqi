@@ -1,24 +1,60 @@
-# wuziqi
-简易 Java 五子棋实现
+五子棋
+=====
 
-# 使用方法
-本程序的棋盘大小是 15*15 的，输入坐标时先输 x 坐标，然后空格再输 y 坐标，x, y 坐标范围都在 1——15 ，坐上角为（1，1）点，右下角为（15,15）点。
-```
-black:1 1
-```
-black: 表示黑子下棋，1 1表示下在(1，1）点，即左上角。
-当输入已经有棋子的坐标时或超过棋盘范围的坐标时会显示
-```
-There is a chess piece or the position over the chess board(15*15)! Please enter a new position
-```
+简易 Java 五子棋实现, 有终端字符组成的图形界面。
 
-# how to use
-This program's chessboard is 15*15. First, you should enter the value of x. Then enter a blank. Finally you should enter the value of y. The value of x and y should between 1 to 15. The position of (1, 1) is in the upper left corner. The position of (15, 15) is in the lower right corner.
-```
-black:1 1
-```
-"black:" means that turn black chess, "1 1" means that want to put on (1, 1).
-when you enter a position which has a chess piece or the position over the chess board, the program will display
-```
-There is a chess piece or the position over the chess board(15*15)! Please enter a new position
-```
+![Screenshot](photos/01.png)
+
+使用手册
+------
+
+左下角表示要下的棋子的颜色，用坐标表示棋子的位置，横向为 x 坐标，纵向为 y 坐标，输入格式为：x y，x 和 y 之间用空格隔开，输入完按下回车就会显示在绘制的棋盘上，O 表示黑棋，@ 表示白棋。
+
+运行
+---
+
+进入 src 目录编译，执行
+
+``` javac *.java ```
+
+
+然后执行
+
+``` java wuziqi ```
+
+运行程序
+
+TODO
+----
+
+- 悔棋操作
+- AI 对手
+
+GOBANG
+======
+
+An easy gobang program which has an easy UI.
+
+![Screenshot](photos/01.png)
+
+How to use
+----------
+
+The lower left quarter means the chess piece which color you will put. Coordinate the position of the chess. Row is x, and rank is y. Input format:x y. There is a blank between x and y. Finally, press Enter. The chess piece will be painted on the chessboard. O says black. @ says white.
+
+How to run
+----------
+
+Enter the src file to compile
+
+``` javac *.java ```
+
+then run the program
+
+``` java wuziqi ```
+
+TODO
+----
+
+- retract
+- AI player
