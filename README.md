@@ -40,7 +40,7 @@ An easy gobang program which has an easy UI.
 How to use
 ----------
 
-The lower left quarter means the chess piece which color you will put. Coordinate the position of the chess. Row is x, and rank is y. Input format:x y. There is a blank between x and y. Finally, press Enter. The chess piece will be painted on the chessboard. O says black. @ says white.
+The lower left quarter means the color of chess piece which you will put. Coordinate the position of the chess. Row is x, and rank is y. Input format:x y. There is a blank between x and y. Finally, press Enter. The chess piece will be painted on the chessboard. O says black. @ says white.
 
 How to run
 ----------
