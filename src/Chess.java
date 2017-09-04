@@ -1,3 +1,4 @@
+//棋子类，用于储存棋子的属性：x, y 坐标和颜色
 public class Chess {
     private int x, y;
     private char color;
@@ -13,11 +14,12 @@ public class Chess {
         this.y = y;
     }
 
+    //判断是不是同一颗棋子，x, y 坐标及其颜色相同则返回 true
     public boolean equals(Chess chess) {
         return chess.getX() == x && chess.getY() == y && chess.getColor() == color;
     }
 
-    //if the chess positin is the same return true
+    //判断是否有位置相同的棋子，若有则返回 true
     public boolean positionEquals(Chess chess) {
         return chess.getX() == x && chess.getY() == y;
     }

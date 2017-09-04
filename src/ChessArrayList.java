@@ -1,24 +1,28 @@
+//用来记录下的每颗棋的数组型线性表
 public class ChessArrayList {
-    public static final int CAPACITY = 225;
-    public static final int MAX = 15;
+    //该棋盘为 15 × 15
+    public static final int CAPACITY = 225;    //棋盘最多下 225 颗棋
+    public static final int MAX = 15;    //棋盘行列的数目
 
-    private int size = 0;
-    private Chess[] list = new Chess[CAPACITY];
+    private int size = 0;    //记录已经下了的棋子的数目也是该线性表的 size
+    private Chess[] list = new Chess[CAPACITY];    //该线性表储存数据的数组
 
-    //add a chess on the chess board
+    //添加棋子
     public void add(Chess chess) {
         list[size++] = chess;
     }
 
+    //获取第 index 步的棋子对象
     public Chess get(int index) {
         return list[index];
     }
 
+    //获得 size
     public int getSize() {
         return size;
     }
 
-    //clean the chess board
+    //清空棋盘
     public void clean() {
         for (int i = 0; i < CAPACITY; i++)
             list[i] = null;
@@ -26,7 +30,7 @@ public class ChessArrayList {
         size = 0;
     }
 
-    //if the chess board has the same chess return true
+    //如果棋盘上含有相同的棋子则返回 true
     public boolean contains(Chess chess) {
         for (int i = 0; i < size; i++) {
             if (chess.equals(list[i]))
@@ -36,7 +40,7 @@ public class ChessArrayList {
         return false;
    }
 
-    //if there is a chess return true
+    //如果某位置有棋子则返回 true
     public boolean hasChess(Chess chess) {
         for (int i = 0; i < size; i++) {
             if (chess.positionEquals(list[i]))
@@ -46,11 +50,12 @@ public class ChessArrayList {
         return false;
     }
 
-    //check win from four direction(A, B, C, D)
+    //通过四个方向的 check(A, B, C, D) ，检查是否胜利，胜利则返回 true
     public boolean check(Chess chess) {
         return checkA(chess) || checkB(chess) || checkC(chess) || checkD(chess);
     }
 
+    //检查方向 A （横向）是否胜利，胜利则返回 true
     public boolean checkA(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
@@ -72,6 +77,7 @@ public class ChessArrayList {
         return false;
     }
 
+    //检查方向 B （纵向）是否胜利，胜利则返回 true
     public boolean checkB(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
@@ -93,6 +99,7 @@ public class ChessArrayList {
         return false;
     }
 
+    //检查方向 C （左上到右下）是否胜利，胜利则返回 true
     public boolean checkC(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
@@ -115,6 +122,7 @@ public class ChessArrayList {
         return false;
     }
 
+    //检查方向 D （左下到右上）是否胜利，胜利则返回 true
     public boolean checkD(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
