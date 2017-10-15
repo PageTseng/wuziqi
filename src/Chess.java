@@ -1,9 +1,8 @@
 //棋子类，用于储存棋子的属性：x, y 坐标和颜色
-public class Chess {
-    private int x, y;
-    private char color;
+public class Chess implements Constants {
+    private int x, y, color;
 
-    public Chess(int x, int y, char color) {
+    public Chess(int x, int y, int color) {
         this.x = x;
         this.y = y;
         this.color = color;
@@ -32,7 +31,7 @@ public class Chess {
         return y;
     }
 
-    public char getColor() {
+    public int getColor() {
         return color;
     }
 }

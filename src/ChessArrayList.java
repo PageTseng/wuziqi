@@ -1,9 +1,5 @@
 //用来记录下的每颗棋的数组型线性表
-public class ChessArrayList {
-    //该棋盘为 15 × 15
-    public static final int CAPACITY = 225;    //棋盘最多下 225 颗棋
-    public static final int MAX = 15;    //棋盘行列的数目
-
+public class ChessArrayList implements Constants {
     private int size = 0;    //记录已经下了的棋子的数目也是该线性表的 size
     private Chess[] list = new Chess[CAPACITY];    //该线性表储存数据的数组
 
@@ -50,6 +46,13 @@ public class ChessArrayList {
         return false;
     }
 
+    //移除最后一个棋子
+    public Chess remove() {
+        Chess temp = list[--size];
+        list[size] = null;
+        return temp;
+    }
+
     //通过四个方向的 check(A, B, C, D) ，检查是否胜利，胜利则返回 true
     public boolean check(Chess chess) {
         return checkA(chess) || checkB(chess) || checkC(chess) || checkD(chess);
@@ -59,7 +62,7 @@ public class ChessArrayList {
     public boolean checkA(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
-        char color = chess.getColor();
+        int color = chess.getColor();
         int num = 1;
 
         while (--x >= 1 && contains(new Chess(x, y, color)))
@@ -81,7 +84,7 @@ public class ChessArrayList {
     public boolean checkB(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
-        char color = chess.getColor();
+        int color = chess.getColor();
         int num = 1;
 
         while (--y >= 1 && contains(new Chess(x, y, color)))
@@ -103,7 +106,7 @@ public class ChessArrayList {
     public boolean checkC(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
-        char color = chess.getColor();
+        int color = chess.getColor();
         int num = 1;
 
         while (--x >= 1 && --y >= 1 && contains(new Chess(x, y, color)))
@@ -126,7 +129,7 @@ public class ChessArrayList {
     public boolean checkD(Chess chess) {
         int x = chess.getX();
         int y = chess.getY();
-        char color = chess.getColor();
+        int color = chess.getColor();
         int num = 1;
 
         while (--x >= 1 && ++y <= MAX && contains(new Chess(x, y, color)))

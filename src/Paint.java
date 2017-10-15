@@ -1,7 +1,6 @@
 //绘制棋盘
-public class Paint {
-    public static final int MAX = 15;    //棋盘行列最大值
-    private char[][] chessBoard = new char[MAX][MAX];    //记录棋盘上各点上棋子颜色
+public class Paint implements Constants {
+    private int[][] chessBoard = new int[MAX][MAX];    //记录棋盘上各点上棋子颜色
 
     //初始化
     public Paint(ChessArrayList list) {
@@ -29,10 +28,10 @@ public class Paint {
             System.out.format("%02d|", i);
             for (int j = 1; j <= MAX; j++) {
                 switch(chessBoard[j - 1][i - 1]) {
-                    case 'b':
+                    case BLACK:
                         System.out.print(" O |");
                         break;
-                    case 'w':
+                    case WHITE:
                         System.out.print(" @ |");
                         break;
                     default:
